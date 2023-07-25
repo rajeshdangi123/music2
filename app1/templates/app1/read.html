@@ -1,0 +1,32 @@
+{% extends 'app1/base.html' %}
+{% block title %} songs list{%endblock title%}
+
+{% block contants %}
+
+<form action="", method="POST" ,enctype="multipart/form-data">
+    <table  border="1" cellpadding="12px">
+        <tr>
+            <th>id</th>
+            <th>songs</th>
+            <th colspan="2">action</th>
+
+        </tr>
+        {% for i in pi %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.song}}</td>
+            <td>
+                <a href="{{ i.song.url }}" {{i.song}}>Play</a></td>
+                <td>
+                <a href="{{i.song.url}}" download >download</a>
+            </td>
+
+        </tr>
+        {% endfor%}
+
+    </table>
+    
+
+</form>
+
+{% endblock contants %}
